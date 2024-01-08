@@ -14,9 +14,9 @@ async def websocket_endpoint(websocket: WebSocket):
     while True:
         data = await websocket.receive_text()
         user_count, last_user_name, last_user_pfp = user_count()
-        await websocket.send_json{
+        await websocket.send_json({
             "user_count": user_count,
             "last_user_name": last_user_name,
             "last_user_pfp": last_user_pfp,
             "time": time.time()    
-        }
+        })
